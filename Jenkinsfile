@@ -3,9 +3,14 @@ pipeline {
     agent any
     
     stages {
-         stage('build') {
+         stage('dependencies') {
           steps {
               bat 'npm install'
+            }
+          }
+          stage('build') {
+          steps {
+              bat 'npm run build'
             }
           }
         
